@@ -3,55 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos Sociais - ONG Exemplo</title>
+  <title>Projetos - ONG Exemplo</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <header>
-  <img src="imagens/logo-voluntarios.jpg" alt="Logo da ONG">
-  <nav>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
-    </ul>
-  </nav>
+  <div class="header-container">
+    <img src="imagens/logo-voluntarios.jpg" alt="Logo da ONG" class="logo">
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <div class="menu-hamburguer">&#9776;</div>
+    </nav>
+  </div>
 </header>
 
-<main class="container">
-  <section id="projetos">
-    <article class="card">
-      <h2>Projeto Esperança</h2>
-      <img src="imagens/criancas-voluntariado.jpg" alt="Crianças voluntariado">
-      <p>Atuação com crianças em situação de vulnerabilidade, oferecendo reforço escolar.</p>
-    </article>
-
-    <article class="card">
-      <h2>Projeto Verde Vivo</h2>
-      <img src="imagens/voluntariado-grupo.jpg" alt="Voluntariado grupo">
-      <p>Iniciativa de reflorestamento urbano e conscientização ambiental.</p>
-    </article>
-
-    <article class="card">
-      <h2>Distribuição de Alimentos</h2>
-      <img src="imagens/voluntario-distribuindo-alimentos.jpg" alt="Voluntário distribuindo alimentos">
-      <p>Apoio a famílias em situação de vulnerabilidade por meio de doações de alimentos.</p>
-    </article>
-  </section>
-
-  <section id="como-participar">
-    <h2>Como Participar</h2>
-    <p>Seja voluntário ou faça uma doação online e contribua com nossos projetos sociais.</p>
-    <ul>
-      <li><a href="cadastro.html">Cadastre-se como voluntário</a></li>
-      <li><a href="#">Doe agora</a></li>
-    </ul>
+<main>
+  <section class="container">
+    <h1>Projetos Sociais</h1>
+    <div class="cards-grid">
+      <article class="card">
+        <img src="imagens/equipe-voluntarios-acao.jpg" alt="Projeto Esperança">
+        <h3>Projeto Esperança</h3>
+        <p>Atuação com crianças em situação de vulnerabilidade, oferecendo reforço escolar.</p>
+      </article>
+      <article class="card">
+        <img src="imagens/voluntariado-grupo.jpg" alt="Projeto Verde Vivo">
+        <h3>Projeto Verde Vivo</h3>
+        <p>Iniciativa de reflorestamento urbano e conscientização ambiental.</p>
+      </article>
+      <article class="card">
+        <img src="imagens/voluntario-distribuindo-alimentos.jpg" alt="Projeto Solidário">
+        <h3>Projeto Solidário</h3>
+        <p>Distribuição de alimentos e apoio a famílias em vulnerabilidade social.</p>
+      </article>
+      <article class="card">
+        <img src="imagens/voluntariado-ajuda.jpg" alt="Projeto Comunidade">
+        <h3>Projeto Comunidade</h3>
+        <p>Eventos e atividades para engajar a comunidade em ações voluntárias.</p>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 ONG Exemplo. Transparência e compromisso com a comunidade.</p>
+  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
 </footer>
 
 <script type="module" src="js/app.js"></script>
