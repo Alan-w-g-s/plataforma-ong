@@ -1,6 +1,16 @@
-/* ======================
-RESET E BASE
-====================== */
+/* Variáveis CSS para cores e espaçamentos */
+:root {
+  --cor-primaria: #2a6f97;
+  --cor-secundaria: #1c5980;
+  --cor-fundo: #f7f9fc;
+  --cor-texto: #333;
+  --esp-8: 8px;
+  --esp-16: 16px;
+  --font-pequeno: 14px;
+  --border-radius: 8px;
+}
+
+/* RESET básico */
 * {
   margin: 0;
   padding: 0;
@@ -12,76 +22,105 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
+  padding: var(--esp-16);
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* HEADER e NAV */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--esp-16);
 }
 
-ul {
+header img {
+  max-height: 60px;
+  border-radius: var(--border-radius);
+}
+
+nav ul {
+  display: flex;
+  gap: var(--esp-16);
   list-style: none;
 }
 
-/* ======================
-CONTAINERS E GRID
-====================== */
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--esp-16);
-  padding: var(--esp-16);
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--cor-primaria);
 }
 
-/* ======================
-CARDS
-====================== */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
+nav ul li a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* SEÇÕES principais */
+main section {
+  margin-bottom: 2rem;
+}
+
+/* IMAGENS */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  display: block;
+  margin: var(--esp-16) 0;
+}
+
+/* SEÇÃO DE IMAGENS ILUSTRATIVAS NA INDEX */
+#imagens-ilustrativas img {
+  max-width: 30%;
+  margin-right: var(--esp-8);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* PROJETOS - artigos com borda e sombra */
+#projetos article {
+  background: #fff;
   padding: var(--esp-16);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-card);
-  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: var(--esp-16);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* COMO PARTICIPAR */
+#como-participar ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* ======================
-BOTÕES
-====================== */
-button {
-  background-color: var(--cor-secundaria);
-  color: #fff;
-  padding: var(--esp-8) var(--esp-16);
-  border: none;
+#como-participar ul li {
+  margin-bottom: var(--esp-8);
+}
+
+#como-participar a {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+/* FORMULÁRIO - estilo base */
+form {
+  background: #fff;
+  padding: var(--esp-16);
   border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-button:hover {
-  background-color: #1c5980;
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  margin-top: var(--esp-8);
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* ======================
-FORMULÁRIOS
-====================== */
 input, select, textarea {
   width: 100%;
   padding: var(--esp-8);
   margin-bottom: var(--esp-16);
   border: 1px solid #ccc;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
   transition: border-color 0.3s;
 }
 
@@ -90,55 +129,74 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* ======================
-MENU DE NAVEGAÇÃO
-====================== */
-nav {
-  background-color: var(--cor-primaria);
-  padding: var(--esp-16);
+/* BOTÕES */
+button {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  padding: var(--esp-8) var(--esp-16);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
 }
 
-nav ul {
+button:hover {
+  background-color: var(--cor-primaria);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* LAYOUT DA PÁGINA DE CADASTRO: FORMULARIO + IMAGEM LADO A LADO */
+#form-cadastro {
   display: flex;
   gap: var(--esp-16);
+  align-items: flex-start;
 }
 
-nav ul li a {
-  color: #fff;
-  font-weight: bold;
+#form-cadastro form {
+  flex: 1;
 }
 
-/* Menu responsivo */
-.menu-hamburguer {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
+#form-cadastro div {
+  flex: 1;
 }
 
+#form-cadastro img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: var(--esp-16) 0;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: var(--esp-32, 32px);
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
+  #form-cadastro {
+    flex-direction: column;
+  }
+
+  #imagens-ilustrativas img {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: var(--esp-16);
+  }
+
   nav ul {
-    display: none;
     flex-direction: column;
     gap: var(--esp-8);
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-hamburguer {
-    display: block;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    font-size: var(--font-pequeno);
   }
 }
 
