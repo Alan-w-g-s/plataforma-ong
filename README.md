@@ -37,8 +37,6 @@ Acesse a plataforma diretamente pelo GitHub Pages:
 ├── projeto2.jpg
 └── voluntariado.jpg
 
-yaml
-Copiar código
 
 ---
 
