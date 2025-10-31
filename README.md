@@ -1,19 +1,17 @@
-# 🌱 Plataforma ONG
+# 🌱 Plataforma ONG 💻
 
-## 💻 Sobre o Projeto
+## Sobre o Projeto
 
-Projeto desenvolvido para a disciplina de **Desenvolvimento Web** na Universidade Cruzeiro do Sul Virtual.  
-O projeto consolida conhecimentos em **HTML5, CSS3, JavaScript, acessibilidade (WCAG 2.1)** e controle de versão com **Git/GitHub**.
+Projeto desenvolvido para a disciplina de Desenvolvimento Web na **Universidade Cruzeiro do Sul Virtual**. Este projeto consolida conhecimentos em **HTML5, CSS3, JavaScript**, acessibilidade (WCAG 2.1) e controle de versão com Git/GitHub.
 
-A Plataforma ONG foi criada para **divulgar projetos sociais** e **facilitar o cadastro de voluntários**, oferecendo uma interface moderna, acessível e responsiva.
+A **Plataforma ONG** foi criada com o objetivo de promover a divulgação de projetos sociais e facilitar o cadastro de voluntários, oferecendo uma interface moderna, acessível e responsiva.
 
 ---
 
-## 🔗 Acesso ao Projeto
+## 🔗 Projeto Online
 
-[🌐 Acessar a Plataforma no GitHub Pages](https://alan-w-g-s.github.io/plataforma-ong/)
-
-[📂 Repositório no GitHub](https://github.com/Alan-w-g-s/plataforma-ong)
+Acesse a plataforma diretamente pelo GitHub Pages:  
+[🌐 Plataforma ONG no GitHub Pages](https://alan-w-g-s.github.io/plataforma-ong/)
 
 ---
 
@@ -39,7 +37,8 @@ A Plataforma ONG foi criada para **divulgar projetos sociais** e **facilitar o c
 ├── projeto2.jpg
 └── voluntariado.jpg
 
-
+yaml
+Copiar código
 
 ---
 
