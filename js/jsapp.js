@@ -1,33 +1,38 @@
-// app.js
-// Ponto de entrada da aplicação SPA
-import { navigateTo, handleInitialRoute } from "./router.js";
+// ==============================
+// MENU HAMBÚRGUER RESPONSIVO
+// ==============================
+const menuHamburguer = document.querySelector('.menu-hamburguer');
+const menu = document.querySelector('nav ul.menu');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const app = document.querySelector("main");
+menuHamburguer.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
 
-  // Delegação para links do nav (funciona mesmo se nav for re-renderizado)
-  document.body.addEventListener("click", (e) => {
-    const a = e.target.closest && e.target.closest("a");
-    if (!a) return;
+// ==============================
+// VALIDAÇÃO DO FORMULÁRIO DE CADASTRO
+// ==============================
+const formCadastro = document.getElementById('form-cadastro');
 
-    const href = a.getAttribute("href");
+if (formCadastro) {
+  formCadastro.addEventListener('submit', (e) => {
+    e.preventDefault(); // Evita envio real para teste
 
-    // Não intercepta links externos ou anchors com target _blank
-    if (!href || href.startsWith("http") || a.target === "_blank" || href.startsWith("mailto:") || href.startsWith("tel:")) {
+    // Captura valores dos campos
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const projeto = document.getElementById('projeto').value;
+
+    // Validação simples
+    if (!nome || !email || !telefone || !projeto) {
+      alert('Por favor, preencha todos os campos.');
       return;
     }
 
-    // Intercepta links internos e faz navegação SPA
-    e.preventDefault();
-    history.pushState({}, "", href);
-    navigateTo(window.location.pathname, app);
-  });
+    // Aqui você poderia enviar os dados para um servidor
+    alert(`Cadastro enviado com sucesso!\nNome: ${nome}\nEmail: ${email}\nProjeto: ${projeto}`);
 
-  // Navegação com botões do navegador (voltar/avançar)
-  window.addEventListener("popstate", () => {
-    navigateTo(window.location.pathname, app);
+    // Limpa formulário
+    formCadastro.reset();
   });
-
-  // Carrega a rota inicial (se o usuário entrou direto em /cadastro.html, por exemplo)
-  handleInitialRoute(window.location.pathname, app);
-});
+}
