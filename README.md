@@ -39,6 +39,7 @@ Acesse a plataforma diretamente pelo GitHub Pages:
 
 
 
+
 ---
 
 ## ⚙️ Funcionalidades
