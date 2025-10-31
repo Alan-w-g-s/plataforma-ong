@@ -38,36 +38,88 @@ ul {
 }
 
 /* ======================
-LOGO DA ONG
+HEADER
 ===================== */
+header {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--esp-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .logo {
-  max-width: 200px;
+  max-width: 150px;
   height: auto;
-  display: block;
-  margin-bottom: 16px;
+}
+
+/* Menu */
+nav ul.menu {
+  display: flex;
+  gap: var(--esp-16);
+}
+
+nav ul.menu li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu-hamburguer {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* ======================
-GRID E CONTAINERS
+SEÇÕES
 ===================== */
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--esp-16);
-  padding: var(--esp-16);
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 var(--esp-16);
 }
 
-/* ======================
-CARDS
-===================== */
-.card {
+h1, h2, h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-16);
+}
+
+.sobre-content {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: var(--esp-16);
+  flex-wrap: wrap;
+  gap: var(--esp-16);
+}
+
+.sobre-content img {
+  flex: 1 1 300px;
+  max-width: 400px;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.sobre-content p {
+  flex: 2 1 400px;
+}
+
+/* Cards de Projetos */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--esp-16);
+}
+
+.card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s;
 }
 
@@ -75,114 +127,59 @@ CARDS
   transform: translateY(-5px);
 }
 
-/* ======================
-BOTÕES
-===================== */
-button {
-  background-color: var(--cor-secundaria);
-  color: #fff;
-  padding: var(--esp-8) var(--esp-16);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #1c5980;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* ======================
-FORMULÁRIOS
-===================== */
-input, select, textarea {
+.card img {
   width: 100%;
-  padding: var(--esp-8);
-  margin-bottom: var(--esp-16);
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s;
+  height: 180px;
+  object-fit: cover;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: var(--cor-secundaria);
-  outline: none;
+.card h3 {
+  padding: var(--esp-8) var(--esp-16) 0;
+}
+
+.card p {
+  padding: 0 var(--esp-16) var(--esp-16);
+}
+
+/* Valores */
+.valores-list li {
+  margin-bottom: var(--esp-8);
 }
 
 /* ======================
-MENU DE NAVEGAÇÃO
+FOOTER
 ===================== */
-nav {
+footer {
   background-color: var(--cor-primaria);
-  padding: var(--esp-16);
-}
-
-nav ul {
-  display: flex;
-  gap: var(--esp-16);
-}
-
-nav ul li {
-  position: relative;
-}
-
-nav ul li a {
   color: #fff;
-  font-weight: bold;
-}
-
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--cor-primaria);
-  padding: var(--esp-8);
-  flex-direction: column;
-  min-width: 150px;
-  border-radius: 4px;
-}
-
-nav ul li:hover > ul {
-  display: flex;
-}
-
-nav ul ul li {
-  margin: 0;
-}
-
-.menu-hamburguer {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
+  text-align: center;
+  padding: var(--esp-16);
+  margin-top: 40px;
 }
 
 /* ======================
 RESPONSIVIDADE
 ===================== */
 @media (max-width: 768px) {
-  nav ul {
-    display: none;
+  .sobre-content {
     flex-direction: column;
-    gap: var(--esp-8);
+    align-items: center;
   }
 
-  nav ul.active {
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--esp-8);
+    margin-top: var(--esp-16);
+  }
+
+  nav ul.menu.active {
     display: flex;
   }
 
   .menu-hamburguer {
     display: block;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -192,29 +189,3 @@ RESPONSIVIDADE
   }
 }
 
-/* ======================
-IMAGENS PROJETOS E VOLUNTÁRIOS
-===================== */
-#projetos article img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: var(--border-radius);
-  display: block;
-}
-
-#form-cadastro div img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border-radius: var(--border-radius);
-}
-
-/* ======================
-OUTRAS IMAGENS GERAIS
-===================== */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
