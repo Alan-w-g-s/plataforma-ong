@@ -39,8 +39,7 @@ plataforma-ong/
 ├── projeto2.jpg
 └── voluntariado.jpg
 
-markdown
-Copiar código
+----
 
 ## ⚙️ Funcionalidades
 
