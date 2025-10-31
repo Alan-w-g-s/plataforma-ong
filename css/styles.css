@@ -1,11 +1,36 @@
 /* ======================
-GRID E CONTAINERS
+RESET E BASE
+====================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ======================
+CONTAINERS E GRID
 ====================== */
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--esp-16);
-  padding: var(--esp16);
+  padding: var(--esp-16);
 }
 
 /* ======================
@@ -17,8 +42,8 @@ CARDS
   justify-content: space-between;
   background-color: #fff;
   padding: var(--esp-16);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
   transition: transform 0.2s;
 }
 
@@ -34,7 +59,7 @@ button {
   color: #fff;
   padding: var(--esp-8) var(--esp-16);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -56,7 +81,7 @@ input, select, textarea {
   padding: var(--esp-8);
   margin-bottom: var(--esp-16);
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   transition: border-color 0.3s;
 }
 
@@ -78,35 +103,12 @@ nav ul {
   gap: var(--esp-16);
 }
 
-nav ul li {
-  position: relative;
-}
-
 nav ul li a {
   color: #fff;
   font-weight: bold;
 }
 
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--cor-primaria);
-  padding: var(--esp-8);
-  flex-direction: column;
-  min-width: 150px;
-  border-radius: 4px;
-}
-
-nav ul li:hover > ul {
-  display: flex;
-}
-
-nav ul ul li {
-  margin: 0;
-}
-
+/* Menu responsivo */
 .menu-hamburguer {
   display: none;
   font-size: 24px;
@@ -114,9 +116,6 @@ nav ul ul li {
   cursor: pointer;
 }
 
-/* ======================
-RESPONSIVIDADE
-====================== */
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -142,3 +141,4 @@ RESPONSIVIDADE
     font-size: var(--font-pequeno);
   }
 }
+
