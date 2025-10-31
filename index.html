@@ -3,87 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG Exemplo</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Plataforma ONG</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ======================
-HEADER
-====================== -->
-<header>
-  <img src="imagens/logo.png" alt="Logo da ONG" class="logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- ======================
+       HEADER / NAV
+  ====================== -->
+  <header>
+    <nav aria-label="Menu principal">
+      <div class="logo-container">
+        <img src="imagens/logo.png" alt="Logo da Plataforma ONG" class="logo">
+      </div>
+      <button class="menu-hamburguer" aria-label="Abrir menu">&#9776;</button>
+      <ul>
+        <li><a href="index.html" tabindex="0">Início</a></li>
+        <li>
+          <a href="projetos.html" tabindex="0">Projetos</a>
+          <ul aria-label="Submenu Projetos">
+            <li><a href="projetos.html#projeto1" tabindex="0">Projeto 1</a></li>
+            <li><a href="projetos.html#projeto2" tabindex="0">Projeto 2</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html" tabindex="0">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- ======================
-MAIN
-====================== -->
-<main>
+  <!-- ======================
+       MAIN
+  ====================== -->
+  <main>
+    <section id="sobre" aria-labelledby="titulo-sobre">
+      <h1 id="titulo-sobre">Sobre o Projeto</h1>
+      <p>
+        Projeto desenvolvido para a disciplina de Desenvolvimento Web na Universidade Cruzeiro do Sul Virtual. 
+        A Plataforma ONG promove divulgação de projetos sociais e facilita o cadastro de voluntários.
+      </p>
+    </section>
 
-  <!-- QUEM SOMOS -->
-  <section id="sobre">
-    <h1>Quem Somos</h1>
-    <p>Nossa ONG atua em projetos sociais voltados à educação, saúde e meio ambiente, promovendo inclusão e desenvolvimento social em comunidades carentes.</p>
-  </section>
+    <section id="projetos" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos">Projetos em Destaque</h2>
+      <div class="container">
+        <article class="card" tabindex="0">
+          <img src="imagens/projeto1.jpg" alt="Projeto 1: Voluntariado com crianças" class="project-img">
+          <h3>Projeto 1</h3>
+          <p>Descrição do projeto 1.</p>
+        </article>
 
-  <!-- VALORES -->
-  <section id="valores">
-    <h2>Missão, Visão e Valores</h2>
-    <ul>
-      <li><strong>Missão:</strong> Promover inclusão e desenvolvimento social.</li>
-      <li><strong>Visão:</strong> Ser referência em transformação comunitária.</li>
-      <li><strong>Valores:</strong> Transparência, Solidariedade e Sustentabilidade.</li>
-    </ul>
-  </section>
+        <article class="card" tabindex="0">
+          <img src="imagens/projeto2.jpg" alt="Projeto 2: Apoio a idosos" class="project-img">
+          <h3>Projeto 2</h3>
+          <p>Descrição do projeto 2.</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- PROJETOS -->
-  <section id="projetos">
-    <article>
-      <h2>Projeto Esperança</h2>
-      <img src="imagens/criancas-voluntariado.jpg" alt="Crianças voluntariado">
-      <p>Atuação com crianças em situação de vulnerabilidade, oferecendo reforço escolar.</p>
-    </article>
+    <section id="voluntariado" aria-labelledby="titulo-voluntariado">
+      <h2 id="titulo-voluntariado">Cadastre-se como Voluntário</h2>
+      <div id="form-cadastro">
+        <div>
+          <img src="imagens/voluntariado.jpg" alt="Voluntários ajudando a comunidade">
+        </div>
+        <form>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
 
-    <article>
-      <h2>Projeto Verde Vivo</h2>
-      <img src="imagens/voluntariado-grupo.jpg" alt="Voluntariado grupo">
-      <p>Iniciativa de reflorestamento urbano e conscientização ambiental.</p>
-    </article>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
 
-    <article>
-      <h2>Projeto Alimento Solidário</h2>
-      <img src="imagens/voluntario-distribuindo-alimentos.jpg" alt="Voluntário distribuindo alimentos">
-      <p>Distribuição de alimentos para famílias em situação de vulnerabilidade.</p>
-    </article>
-  </section>
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" required>
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <address>
-      <p>Email: contato@ongexemplo.org</p>
-      <p>Telefone: (11) 99999-9999</p>
-      <p>Endereço: Rua da Esperança, 123 - São Paulo/SP</p>
-    </address>
-  </section>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-</main>
+  <!-- ======================
+       FOOTER
+  ====================== -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Plataforma ONG — Desenvolvido por Alan Silva</p>
+    <p>Universidade Cruzeiro do Sul Virtual</p>
+    <p>Email: <a href="mailto:oalanwagner@gmail.com">oalanwagner@gmail.com</a></p>
+  </footer>
 
-<!-- ======================
-FOOTER
-====================== -->
-<footer>
-  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
-</footer>
-
-<script type="module" src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
 
