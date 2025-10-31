@@ -1,8 +1,10 @@
-/* Variáveis CSS para cores e espaçamentos */
+/* ======================
+VARIÁVEIS
+====================== */
 :root {
-  --cor-primaria: #2a6f97;
-  --cor-secundaria: #1c5980;
-  --cor-fundo: #f7f9fc;
+  --cor-primaria: #2c3e50;
+  --cor-secundaria: #3498db;
+  --cor-fundo: #f5f5f5;
   --cor-texto: #333;
   --esp-8: 8px;
   --esp-16: 16px;
@@ -10,7 +12,9 @@
   --border-radius: 8px;
 }
 
-/* RESET básico */
+/* ======================
+RESET
+====================== */
 * {
   margin: 0;
   padding: 0;
@@ -22,99 +26,70 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
-  padding: var(--esp-16);
 }
 
-/* HEADER e NAV */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--esp-16);
-}
-
-header img {
-  max-height: 60px;
-  border-radius: var(--border-radius);
-}
-
-nav ul {
-  display: flex;
-  gap: var(--esp-16);
-  list-style: none;
-}
-
-nav ul li a {
+a {
   text-decoration: none;
-  font-weight: bold;
-  color: var(--cor-primaria);
+  color: inherit;
 }
 
-nav ul li a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* SEÇÕES principais */
-main section {
-  margin-bottom: 2rem;
-}
-
-/* IMAGENS */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-  display: block;
-  margin: var(--esp-16) 0;
-}
-
-/* SEÇÃO DE IMAGENS ILUSTRATIVAS NA INDEX */
-#imagens-ilustrativas img {
-  max-width: 30%;
-  margin-right: var(--esp-8);
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* PROJETOS - artigos com borda e sombra */
-#projetos article {
-  background: #fff;
-  padding: var(--esp-16);
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: var(--esp-16);
-}
-
-/* COMO PARTICIPAR */
-#como-participar ul {
+ul {
   list-style: none;
-  padding-left: 0;
 }
 
-#como-participar ul li {
-  margin-bottom: var(--esp-8);
+/* ======================
+GRID E CONTAINERS
+====================== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--esp-16);
+  padding: var(--esp-16);
 }
 
-#como-participar a {
-  color: var(--cor-primaria);
-  text-decoration: underline;
-}
-
-/* FORMULÁRIO - estilo base */
-form {
-  background: #fff;
+/* ======================
+CARDS
+====================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
   padding: var(--esp-16);
   border-radius: var(--border-radius);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-label {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: bold;
-  margin-top: var(--esp-8);
+.card:hover {
+  transform: translateY(-5px);
 }
 
+/* ======================
+BOTÕES
+====================== */
+button {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  padding: var(--esp-8) var(--esp-16);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1c5980;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ======================
+FORMULÁRIOS
+====================== */
 input, select, textarea {
   width: 100%;
   padding: var(--esp-8);
@@ -129,74 +104,108 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* BOTÕES */
-button {
-  background-color: var(--cor-secundaria);
-  color: #fff;
-  padding: var(--esp-8) var(--esp-16);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-size: 1rem;
-}
-
-button:hover {
+/* ======================
+MENU DE NAVEGAÇÃO
+====================== */
+nav {
   background-color: var(--cor-primaria);
+  padding: var(--esp-16);
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* LAYOUT DA PÁGINA DE CADASTRO: FORMULARIO + IMAGEM LADO A LADO */
-#form-cadastro {
+nav ul {
   display: flex;
   gap: var(--esp-16);
-  align-items: flex-start;
 }
 
-#form-cadastro form {
-  flex: 1;
+nav ul li {
+  position: relative;
 }
 
-#form-cadastro div {
-  flex: 1;
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
 }
 
-#form-cadastro img {
-  border-radius: var(--border-radius);
-  max-width: 100%;
-  height: auto;
-  display: block;
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--cor-primaria);
+  padding: var(--esp-8);
+  flex-direction: column;
+  min-width: 150px;
+  border-radius: 4px;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: var(--esp-16) 0;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ccc;
-  margin-top: var(--esp-32, 32px);
+nav ul li:hover > ul {
+  display: flex;
 }
 
-/* RESPONSIVIDADE */
+nav ul ul li {
+  margin: 0;
+}
+
+.menu-hamburguer {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ======================
+RESPONSIVIDADE
+====================== */
 @media (max-width: 768px) {
-  #form-cadastro {
-    flex-direction: column;
-  }
-
-  #imagens-ilustrativas img {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: var(--esp-16);
-  }
-
   nav ul {
+    display: none;
     flex-direction: column;
     gap: var(--esp-8);
   }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-hamburguer {
+    display: block;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: var(--font-pequeno);
+  }
+}
+
+/* ======================
+IMAGENS PROJETOS E VOLUNTÁRIOS
+====================== */
+#projetos article img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+#form-cadastro div img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+}
+
+/* ======================
+OUTRAS IMAGENS GERAIS
+====================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
